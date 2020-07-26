@@ -57,7 +57,8 @@
     function generateQuote() {
       let quoteSize = QUOTEBANK.length;
       let randomIndex = Math.floor(Math.random() * quoteSize);
-      let randomQuoteData = QUOTEBANK[randomIndex]; < !--Twitter link-- >
+      let randomQuoteData = QUOTEBANK[randomIndex]; 
+      //Twitter link
       let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22"
       //add the quote
       let quoteInApiFormat = randomQuoteData.quote.replace(/ /g, "%20");
