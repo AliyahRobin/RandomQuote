@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>Motivational Quotes for Women</title>
+  <script>
+    const QUOTEBANK = [{
+        quote: "When the whole world is silent, even one voice becomes powerful.",
+        author: "― Malala Yousafzai"
+      },
+      {
+        quote: "I didn’t get there by wishing for it or hoping for it, but by working for it.",
+        author: "― Estée Lauder"
+      },
+      {
+        quote: "Power is not given to you. You have to take it.",
+        author: "― Beyoncé Knowles Carter"
+      },
+      {
+        quote: "I’d rather regret the things I’ve done than regret the things I haven’t done.",
+        author: "― Lucille Ball"
+      },
+      {
+        quote: "Many receive advice, only the wise profit from it.",
+        author: "― Harper Lee"
+      },
+      {
+        quote: "I need to listen well so that I hear what is not said.",
+        author: "― Thuli Madonsela"
+      },
+      {
+        quote: "Style is a way to say who you are without having to speak.",
+        author: "― Rachel Zoe"
+      },
+      {
+        quote: "We do not need magic to change the world, we carry all the power we need inside ourselves already: we have the power to imagine better.",
+        author: "― J.K. Rowling"
+      },
+      {
+        quote: "You have trust in what you think. If you splinter yourself and try to please everyone, you can’t.",
+        author: "― Annie Leibovitz"
+      },
+      {
+        quote: "Success is only meaningful and enjoyable if it feels like your own",
+        author: "― Michelle Obama"
+      }
+    ];
+    window.onload = init;
+
+    function init() {
+      generateQuote()
+    }
+
+    function generateQuote() {
+      let quoteSize = QUOTEBANK.length;
+      let randomIndex = Math.floor(Math.random() * quoteSize);
+      let randomQuoteData = QUOTEBANK[randomIndex]; 
+	  //Twitter link
+      let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22"
+      //add the quote
+      let quoteInApiFormat = randomQuoteData.quote.replace(/ /g, "%20");
+      twitterLink += quoteInApiFormat
+      //add the author
+      let authorInApiFormat = randomQuoteData.author.replace(/ /g, "%20");
+      twitterLink += " _ " + authorInApiFormat
+      document.getElementById("tweet-quote").href = twitterLink;
+      document.getElementById("text").innerText = randomQuoteData.quote;
+      document.getElementById("author").innerText = randomQuoteData.author;
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Motivational Quotes for Women</h1>
+    <wrapper id="quote-box">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            <div id="text"></div>
+          </h5>
+          <p class="card-text">
+            <div id="author"></div>
+          </p>
+
+          <button id="new-quote" onClick="generateQuote();" class="btn btn-success">Next Quote</button>
+          <a href="#" id="tweet-quote" target="_blank" class="btn btn-primary">Tweet quote</a>
+
+        </div>
+      </div>
+
+    </wrapper>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+
+</html>
